@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import { users, attendance } from './Database/data';
 
 function App() {
   // document.getElementById('date_input').valueAsDate = new Date();
@@ -13,7 +14,7 @@ function App() {
         <input className="form-control w-25" type="date" />
       </div>
 
-      <table className='table table-bordered mt-3 table-striped'>
+      <table className='table table-bordered mt-3 table-striped table-hover'>
         <thead className='font-weight-bold bg-dark text-white'>
           <tr>
             <td>ID</td>
@@ -24,24 +25,22 @@ function App() {
         </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Abbos</td>
-            <td>2020-12-12</td>
-            <td>55</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Valijon</td>
-            <td>2020-12-12</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Nozima</td>
-            <td>2020-12-12</td>
-            <td>33</td>
-          </tr>
+          {attendance.map(a => {
+            return (
+              <tr key={a.id}>
+                <td>{a.id}</td>
+                <td>{
+                  users.map(u => {
+                    if (a.userId === u.id) {
+                      return u.username;
+                    }
+                  })
+                }</td>
+                <td>{a.visitDate}</td>
+                <td>{a.score}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div> // End of container

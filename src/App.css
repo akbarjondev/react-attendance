@@ -42,3 +42,8 @@ body {
     transform: rotate(360deg);
   }
 }
+
+tbody tr:hover,
+input {
+  cursor: pointer;
+}
