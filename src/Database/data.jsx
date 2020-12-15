@@ -16,6 +16,10 @@ const attendance = [
   { id: 7, userId: 4, visitDate: '2020-12-14', visit: true, score: 4 },
   { id: 8, userId: 4, visitDate: '2020-12-14', visit: false, score: 7 },
   { id: 9, userId: 4, visitDate: '2020-12-14', visit: true, score: 12 },
+  { id: 10, userId: 1, visitDate: '2020-12-16', visit: true, score: 23 },
+  { id: 11, userId: 2, visitDate: '2020-12-16', visit: true, score: 31 },
+  { id: 12, userId: 4, visitDate: '2020-12-16', visit: false, score: 55 },
+  { id: 13, userId: 5, visitDate: '2020-12-16', visit: true, score: 88 },
 ];
 
 export { users, attendance };
