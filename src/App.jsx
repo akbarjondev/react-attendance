@@ -6,6 +6,7 @@ import { users, attendance } from './Database/data';
 function App() {
   const [tableAttendance, setTable] = useState([...attendance]);
 
+  // rendering data
   const renderTable = (array) => {
     return array.map(a => {
       return (
@@ -25,6 +26,7 @@ function App() {
     });
   };
 
+  // get current data
   const getCurrentDate = (e) => {
     const filterByDate = attendance.filter(a => {
       return a.visitDate === e.target.value;
